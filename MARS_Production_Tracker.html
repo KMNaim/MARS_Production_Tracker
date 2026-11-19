@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production Hour Tracker</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2E4NTVmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0idXJsKCNnKSIvPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTciIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjIiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE3IiByPSIxLjYiIGZpbGw9IiNmZmYiLz4KICA8cGF0aCBkPSJNMTYgMTAuNSBWMTcgTDIwLjUgMTkuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxyZWN0IHg9IjEzLjUiIHk9IjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjMuMiIgcng9IjEiIGZpbGw9IiNmZmYiLz4KPC9zdmc+" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2E4NTVmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0idXJsKCNnKSIvPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTciIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjIiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE3IiByPSIxLjYiIGZpbGw9IiNmZmYiLz4KICA8cGF0aCBkPSJNMTYgMTAuNSBWMTcgTDIwLjUgMTkuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxyZWN0IHg9IjEzLjUiIHk9IjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjMuMiIgcng9IjEiIGZpbGw9IiNmZmYiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="dark"] {
+      --bg: #0b0f1a;
+      --surface: #121826;
+      --surface2: #1a2234;
+      --surface3: #243044;
+      --border: #2a3650;
+      --text: #e8eef8;
+      --muted: #8b9bb8;
+      --indigo: #6366f1;
+      --indigo-dim: #4f46e5;
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --emerald: #10b981;
+      --orange: #f97316;
+      --rose: #f43f5e;
+      --rose-dark: #e11d48;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --teal: #14b8a6;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 32px rgba(0,0,0,.35);
+      --grad1: rgba(99,102,241,.18);
+      --grad2: rgba(168,85,247,.12);
+      --grad3: rgba(16,185,129,.08);
+      --input-bg: #243044;
+      --status-bg: #1a2234;
+      --toast-bg: #243044;
+    }
+
+    [data-theme="light"] {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --surface2: #f8fafc;
+      --surface3: #e2e8f0;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --muted: #64748b;
+      --indigo: #4f46e5;
+      --indigo-dim: #4338ca;
+      --blue: #2563eb;
+      --purple: #7c3aed;
+      --emerald: #059669;
+      --orange: #ea580c;
+      --rose: #e11d48;
+      --rose-dark: #be123c;
+      --green: #16a34a;
+      --yellow: #ca8a04;
+      --teal: #0d9488;
+      --shadow: 0 8px 28px rgba(15,23,42,.08);
+      --grad1: rgba(99,102,241,.08);
+      --grad2: rgba(168,85,247,.06);
+      --grad3: rgba(16,185,129,.05);
+      --input-bg: #ffffff;
+      --status-bg: #f1f5f9;
+      --toast-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, var(--grad1), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 10%, var(--grad2), transparent),
+        radial-gradient(ellipse 50% 30% at 50% 100%, var(--grad3), transparent);
+      transition: background-color .25s ease, color .2s ease;
+    }
+
+    .app {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 24px 20px 48px;
+    }
+
+    /* ===== Left tools sidebar ===== */
+    .tools-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 56px;
+      background: #0a0a0a;
+      border-right: 1px solid #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px 0 18px;
+      gap: 6px;
+      z-index: 200;
+    }
+
+    [data-theme="light"] .tools-sidebar {
+      background: #111827;
+      border-right-color: #1f2937;
+    }
+
+    .tools-sidebar .sb-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 14px rgba(99,102,241,.35);
+    }
+
+    .tools-sidebar .sb-logo:hover {
+      filter: brightness(1.1);
+    }
+
+    .sb-sep {
+      width: 24px;
+      height: 1px;
+      background: #2a2a2a;
+      margin: 6px 0;
+    }
+
+    .sb-item {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #9ca3af;
+      text-decoration: none;
+      transition: background .15s, color .15s, transform .12s;
+      flex-shrink: 0;
+    }
+
+    .sb-item:hover {
+      background: #1f1f1f;
+      color: #fff;
+      transform: scale(1.06);
+    }
+
+    .sb-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sb-item .tip {
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1f2937;
+      color: #f9fafb;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.35);
+      z-index: 300;
+    }
+
+    .sb-item .tip::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: #1f2937;
+    }
+
+    .sb-item:hover .tip {
+      opacity: 1;
+    }
+
+    .sb-spacer {
+      flex: 1;
+    }
+
+    @media (max-width: 700px) {
+      .tools-sidebar { width: 48px; }
+      .app { padding-left: 12px; padding-right: 12px; }
+      .sb-item { width: 36px; height: 36px; }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--indigo), var(--purple));
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      box-shadow: 0 4px 20px rgba(99,102,241,.4);
+    }
+
+    .logo h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .logo p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    .user-badge .user-name {
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    a.user-link {
+      text-decoration: none;
+      transition: border-color .15s, transform .12s;
+    }
+
+    a.user-link:hover {
+      border-color: var(--indigo);
+      transform: translateY(-1px);
+    }
+
+    a.user-link:hover .user-name {
+      color: var(--indigo);
+    }
+
+    /* Clickable hour cells */
+    .prod-hour.copyable {
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 4px 8px;
+      transition: background .15s, color .15s;
+      user-select: none;
+    }
+
+    .prod-hour.copyable:hover {
+      background: rgba(99,102,241,.18);
+      color: var(--indigo);
+    }
+
+    .prod-hour.copyable:active {
+      background: rgba(99,102,241,.3);
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding: 18px 8px 8px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer a {
+      color: var(--indigo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--indigo);
+    }
+
+    /* Process buttons */
+    .btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .proc-btn {
+      appearance: none;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proc-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .proc-btn:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .proc-btn.active {
+      box-shadow: 0 0 0 3px rgba(255,255,255,.25), 0 8px 24px rgba(0,0,0,.3);
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .proc-btn.break   { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+    .proc-btn.us-l1   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    .proc-btn.eu-l1   { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+    .proc-btn.us-l2   { background: linear-gradient(135deg, #10b981, #059669); }
+    .proc-btn.eu-l2   { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .proc-btn.pc-ec   { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+    .proc-btn.end     { background: linear-gradient(135deg, #be123c, #9f1239); }
+
+    .dot.pc-ec { background: #14b8a6; }
+
+    .proc-btn .hint {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    /* Status panel */
+    .status-box {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: var(--surface2);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .status-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .status-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .status-value.idle { color: var(--muted); }
+    .status-value.tracking { color: var(--emerald); }
+    .status-value.ended { color: var(--rose); }
+
+    .last-log {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Metrics row */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .metrics { grid-template-columns: 1fr; }
+    }
+
+    .metric {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .metric-value.blue { color: var(--blue); }
+    .metric-value.rose { color: var(--rose); }
+    .metric-value.green { color: var(--emerald); }
+
+    /* Production table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    thead th {
+      background: var(--surface3);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 11px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(99,102,241,.06); }
+
+    .proc-name {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot.us-l1 { background: var(--blue); }
+    .dot.eu-l1 { background: var(--purple); }
+    .dot.us-l2 { background: var(--emerald); }
+    .dot.eu-l2 { background: var(--orange); }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    input.prod-input {
+      width: 64px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      text-align: center;
+      outline: none;
+      transition: border-color .15s;
+    }
+
+    input.prod-input:focus {
+      border-color: var(--indigo);
+      box-shadow: 0 0 0 3px rgba(99,102,241,.2);
+    }
+
+    /* No spinner arrows */
+    input.prod-input::-webkit-outer-spin-button,
+    input.prod-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input.prod-input[type=number] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    /* Log section */
+    .log-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .log-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .log-date input {
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 10px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .btn-clear {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+
+    .btn-clear:hover {
+      border-color: var(--rose);
+      color: var(--rose);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #f43f5e, #e11d48);
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s;
+      box-shadow: 0 2px 12px rgba(244,63,94,.35);
+    }
+
+    .btn-danger:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-danger:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .theme-toggle button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all .2s ease;
+    }
+
+    .theme-toggle button.active {
+      background: var(--surface3);
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0,0,0,.15);
+    }
+
+    .theme-toggle button:hover:not(.active) {
+      color: var(--text);
+    }
+
+    .card, .metric, .user-badge, .clock, .status-box, .table-wrap {
+      transition: background-color .25s ease, border-color .25s ease, color .2s ease;
+    }
+
+    .log-table td { font-size: 0.82rem; }
+
+    .empty-log {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .empty-log span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transition: all .3s cubic-bezier(.2,.8,.2,1);
+      z-index: 100;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.ok { border-color: var(--emerald); }
+    .toast.warn { border-color: var(--orange); }
+
+    /* Live clock */
+    .clock {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: var(--surface2);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* ===== v7 additions ===== */
+    [data-theme="light"] .proc-btn.active {
+      outline-color: var(--text);
+      box-shadow: 0 0 0 3px rgba(15,23,42,.15), 0 8px 24px rgba(0,0,0,.15);
+    }
+
+    .btn-group-label {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 6px 2px -2px;
+    }
+
+    .btn-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-pair .proc-btn { padding: 11px 12px; font-size: 0.86rem; }
+
+    .proc-btn.back { filter: saturate(.7) brightness(.82); }
+    .proc-btn.back:hover { filter: saturate(.7) brightness(.95); }
+
+    .proc-btn kbd {
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.64rem;
+      font-weight: 600;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 5px;
+      padding: 1px 5px;
+      opacity: .85;
+    }
+
+    .keys-help {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .keys-help kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0 4px;
+      color: var(--text);
+    }
+
+    .status-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .btn-clear:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      border-color: var(--border) !important;
+      color: var(--muted) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--indigo), var(--purple));
+      border: none;
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { filter: brightness(1.1); }
+
+    .btn-outline-danger {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+
+    .btn-outline-danger:hover { border-color: var(--rose); color: var(--rose); }
+
+    .actions-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .actions-row .spacer { flex: 1; }
+
+    /* Forgotten-shift banner */
+    .banner {
+      background: var(--surface);
+      border: 1px solid var(--orange);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+      font-size: 0.88rem;
+    }
+
+    .banner[hidden] { display: none; }
+    .banner .msg { flex: 1; min-width: 220px; }
+
+    /* Summary card header */
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .card-head .card-title { margin: 0; }
+
+    .card-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .card-tools label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+    .seg {
+      display: inline-flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px;
+    }
+
+    .seg button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .seg button.active { background: var(--surface3); color: var(--text); }
+
+    /* Production rows */
+    /* Compact production table — fits without a horizontal scrollbar */
+    #prodTable thead th { padding: 9px 7px; font-size: 0.64rem; line-height: 1.3; vertical-align: bottom; }
+    #prodTable tbody td { padding: 8px 7px; }
+    #prodTable thead th:first-child, #prodTable tbody td:first-child { padding-left: 12px; }
+    #prodBody .proc-name { white-space: nowrap; line-height: 1.2; }
+    #prodBody .proc-name small { display: block; font-size: 0.7rem; font-weight: 500; color: var(--muted); }
+    #prodTable input.prod-input { width: 54px; padding: 5px 4px; }
+    #prodTable .prog { min-width: 0; gap: 6px; }
+    #prodTable .prog-bar { flex: none; width: 34px; }
+    #prodTable .prog span { min-width: 0; }
+
+    @media (max-width: 1499px) {
+      #prodBody .proc-name { white-space: normal; }
+      #prodBody .proc-name > span:last-child { max-width: 72px; }
+      #prodTable .prog-bar { display: none; }
+      #prodTable .target-sub { white-space: normal; max-width: 52px; }
+      #prodTable input.prod-input { width: 48px; font-size: 0.8rem; }
+      #prodTable .prod-hour.copyable { padding: 4px 4px; }
+      #prodTable thead th { padding: 9px 5px; }
+      #prodTable tbody td { padding: 8px 5px; }
+    }
+
+    @media (min-width: 1250px) and (max-width: 1499px) {
+      .grid { grid-template-columns: 230px minmax(0, 1fr) 225px; gap: 16px; }
+      .right-rail .card, aside .card { padding: 14px; }
+    }
+
+    /* Editable user name */
+    .user-name-input {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      width: 13ch;
+      outline: none;
+    }
+    .user-name-input::placeholder { color: var(--muted); font-weight: 500; }
+    .user-name-input:hover { border-color: var(--border); }
+    .user-name-input:focus { border-color: var(--indigo); background: var(--input-bg); }
+
+    /* Previous day filled in automatically */
+    input.prod-input.auto::placeholder { color: var(--muted); opacity: 1; font-style: italic; }
+
+    /* Three-column layout: buttons | dashboard | quick copy */
+    .grid > aside { grid-area: left; }
+    .grid > main { grid-area: main; min-width: 0; }
+    .grid > .right-rail { grid-area: right; }
+    .grid { grid-template-areas: "left main" "left right"; align-items: start; }
+
+    @media (min-width: 1250px) {
+      .grid {
+        grid-template-columns: 250px minmax(0, 1fr) 235px;
+        grid-template-areas: "left main right";
+      }
+      .right-rail { position: sticky; top: 20px; }
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-areas: "left" "right" "main"; }
+    }
+
+    .clock .clock-date { color: var(--text); font-weight: 500; margin-right: 8px; }
+
+    /* Quick copy */
+    .copy-list { display: flex; flex-direction: column; gap: 6px; }
+    .copy-btn {
+      appearance: none;
+      text-align: left;
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color .15s, background .15s, color .15s;
+    }
+    .copy-btn:hover, .copy-btn:focus-visible { border-color: var(--indigo); outline: none; }
+    .copy-btn .ci { position: absolute; right: 10px; background: var(--surface2); padding-left: 6px; color: var(--muted); font-size: 0.75rem; opacity: 0; transition: opacity .15s; }
+    .copy-btn:hover .ci, .copy-btn:focus-visible .ci { opacity: 1; }
+    .copy-btn.copied { border-color: var(--emerald); color: var(--emerald); }
+    .copy-btn.copied .ci { opacity: 1; color: var(--emerald); }
+
+    /* Quick files */
+    .quick-links { display: flex; flex-direction: column; gap: 8px; }
+    .quick-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: border-color .15s, transform .12s, color .15s;
+    }
+    .quick-btn:hover { border-color: var(--indigo); color: var(--indigo); transform: translateY(-1px); }
+    .quick-btn .qi {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 0.95rem;
+      background: rgba(99,102,241,.15);
+    }
+    .quick-btn .qx { margin-left: auto; color: var(--muted); font-size: 0.8rem; }
+    #prodBody tr.inactive { opacity: .45; }
+    #prodBody tr.inactive:focus-within { opacity: 1; }
+    table.hide-inactive #prodBody tr.inactive { display: none; }
+
+    .prod-hour.copyable:focus-visible {
+      outline: 2px solid var(--indigo);
+      outline-offset: 1px;
+    }
+
+    .prog {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 90px;
+    }
+
+    .prog-bar {
+      flex: 1;
+      height: 6px;
+      background: var(--surface3);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .prog-bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      transition: width .3s ease;
+    }
+
+    .prog span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      min-width: 38px;
+      text-align: right;
+    }
+
+    .status-row .btn-clear { white-space: nowrap; flex-shrink: 0; }
+
+    .target-sub {
+      display: block;
+      white-space: nowrap;
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+
+    /* Log rows */
+    .log-table tbody tr[data-id] { cursor: pointer; }
+
+    .row-edit {
+      appearance: none;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .row-edit:hover, .row-edit:focus-visible { border-color: var(--border); color: var(--indigo); }
+
+    /* Edit dialog */
+    dialog#editDlg {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      width: min(420px, 92vw);
+      box-shadow: var(--shadow);
+    }
+
+    dialog#editDlg::backdrop { background: rgba(0,0,0,.5); }
+
+    dialog#editDlg h3 { font-size: 1rem; margin-bottom: 14px; }
+
+    dialog#editDlg label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    dialog#editDlg select,
+    dialog#editDlg input {
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+    }
+
+    dialog#editDlg input:disabled { opacity: .5; }
+
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .dlg-note { font-size: 0.75rem; color: var(--muted); min-height: 1em; margin-bottom: 12px; }
+    .dlg-note.err { color: var(--rose); }
+
+    .dlg-actions { display: flex; align-items: center; gap: 8px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">⏱</div>
+        <div>
+          <h1>Production Hour Tracker</h1>
+          <p>Click a process (or press its key) to start / switch tracking</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="theme-toggle" id="themeToggle" title="Toggle dark / light mode">
+          <button type="button" data-theme="dark" class="active" aria-label="Dark mode">🌙 Dark</button>
+          <button type="button" data-theme="light" aria-label="Light mode">☀️ Light</button>
+        </div>
+        <div class="clock" id="clock">--:--:--</div>
+        <div class="user-badge" title="Click to type your name">
+          <div class="avatar" id="userAvatar">?</div>
+          <input type="text" id="userName" class="user-name-input" placeholder="Your name" maxlength="40" autocomplete="off" aria-label="Your name" />
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- LEFT: Buttons -->
+      <aside>
+        <div class="card">
+          <div class="card-title">Process buttons</div>
+          <div class="btn-stack" id="btnStack"></div>
+
+          <div class="status-box">
+            <div class="status-row">
+              <div>
+                <div class="status-label">Now tracking</div>
+                <div class="status-value idle" id="statusValue">Ready — click a process</div>
+              </div>
+              <button type="button" class="btn-clear" id="btnUndo" disabled title="Nothing to undo">↶ Undo</button>
+            </div>
+            <div class="last-log" id="lastLog">No entries yet</div>
+          </div>
+
+          <div class="keys-help">
+            Keys: <kbd>1</kbd>–<kbd>9</kbd> processes · <kbd>B</kbd> break · <kbd>E</kbd> end shift · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <div class="card-title">Quick files</div>
+          <div class="quick-links">
+            <a class="quick-btn" href="https://drive.google.com/file/d/1Re_uLJsJsKG3n9OaBMxpDylxeZMsYAvD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">👤</span>1000 Common Names<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1q-L9NjngsTsoKWUsgvUT2h-AiHyUuB1X/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">✅</span>MS Unrestricted List<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1WnQk5jfwEHzcFkcfspY7eMCiOuCwAO1d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">🏢</span>Fortune 500 List<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1LMw_bm2hXwcxgSKXAK7wcoefHsiDxDzf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">🗺️</span>USA Map<span class="qx">↗</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Dashboard -->
+      <main>
+        <div class="banner" id="forgotBanner" role="alert" hidden>
+          <div class="msg" id="forgotMsg"></div>
+          <button type="button" class="btn-primary" id="forgotLast" hidden></button>
+          <button type="button" class="btn-clear" id="forgotNow">End now</button>
+          <button type="button" class="btn-clear" id="forgotKeep">Still working</button>
+        </div>
+
+        <!-- Metrics -->
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Login hours</div>
+            <div class="metric-value blue" id="metricLogin">0:00:00</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Break time</div>
+            <div class="metric-value rose" id="metricBreak">0:00:00</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Total office</div>
+            <div class="metric-value green" id="metricTotal">0:00:00</div>
+          </div>
+        </div>
+
+        <!-- Dashboard actions -->
+        <div class="actions-row">
+          <button type="button" class="btn-clear" id="btnCopySummary" title="Copy the summary as a table you can paste into Excel">⧉ Copy summary</button>
+          <button type="button" class="btn-clear" id="btnCsv" title="Download the selected day's log as CSV">⤓ Download CSV</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn-outline-danger" id="btnClearDash" title="Remove all days, all logs and all production counts">Reset everything…</button>
+        </div>
+
+        <!-- Production summary -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-head">
+            <div class="card-title">Production summary · <span id="summaryDate"></span></div>
+            <div class="card-tools">
+              <label><input type="checkbox" id="hideInactive" /> Hide unused</label>
+              <span>Copy hour as</span>
+              <div class="seg" id="hourFmt">
+                <button type="button" data-fmt="hms" class="active">h:mm:ss</button>
+                <button type="button" data-fmt="dec">decimal</button>
+              </div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="prodTable">
+              <thead>
+                <tr>
+                  <th>Process</th>
+                  <th title="Production">Prod</th>
+                  <th>Hour</th>
+                  <th>Prod/hr</th>
+                  <th>Vs target</th>
+                  <th>Balance</th>
+                  <th title="Yesterday's production. Filled in from the last day you logged; type a number to override, clear it to go back to automatic.">Previous day</th>
+                  <th>Before 11 AM</th>
+                  <th>After 11 AM</th>
+                </tr>
+              </thead>
+              <tbody id="prodBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Activity log -->
+        <div class="card">
+          <div class="log-header">
+            <div class="card-title" style="margin:0;">Activity log</div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="log-date">
+                Date
+                <input type="date" id="logDate" />
+              </div>
+              <button type="button" class="btn-clear" id="btnClearLog" title="Clear the selected day's log">Clear log</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="log-table">
+              <thead>
+                <tr>
+                  <th>Start</th>
+                  <th>End</th>
+                  <th>Duration</th>
+                  <th>Process</th>
+                  <th style="width:1%"></th>
+                </tr>
+              </thead>
+              <tbody id="logBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT: Quick copy -->
+      <aside class="right-rail">
+        <div class="card">
+          <div class="card-title">Quick copy</div>
+          <div class="copy-list" id="copyList"></div>
+        </div>
+      </aside>
+    </div>
+    <footer class="footer">
+      Found this useful? Drop a star ⭐ on <a href="https://github.com/KMNaim/MARS_Production_Tracker" target="_blank" rel="noopener noreferrer">Knaimuddin</a>
+    </footer>
+  </div>
+
+  <dialog id="editDlg" aria-labelledby="editTitle">
+    <form id="editForm">
+      <h3 id="editTitle">Edit entry</h3>
+      <label>Process
+        <select id="edProc"></select>
+      </label>
+      <div class="row2">
+        <label>Start <input type="time" step="1" id="edStart" required /></label>
+        <label>End <input type="time" step="1" id="edEnd" /></label>
+      </div>
+      <p class="dlg-note" id="edNote"></p>
+      <div class="dlg-actions">
+        <button type="button" class="btn-outline-danger" id="edDelete">Delete</button>
+        <span style="flex:1"></span>
+        <button type="button" class="btn-clear" id="edCancel">Cancel</button>
+        <button type="submit" class="btn-primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // ========== Config ==========
+    const TARGETS = {
+      'US Look Forward (L1)': 35,
+      'US Look Back (L1)': 100,
+      'EU Look Forward (L1)': 25,
+      'EU Look Back (L1)': 60,
+      'US Look Forward (L2)': 15,
+      'US Look Back (L2)': 30,
+      'EU Look Forward (L2)': 20,
+      'EU Look Back (L2)': 20,
+      'PC/EC': 20,
+    };
+
+    const PROC_CLASS = {
+      'US Look Forward (L1)': 'us-l1',
+      'US Look Back (L1)': 'us-l1',
+      'EU Look Forward (L1)': 'eu-l1',
+      'EU Look Back (L1)': 'eu-l1',
+      'US Look Forward (L2)': 'us-l2',
+      'US Look Back (L2)': 'us-l2',
+      'EU Look Forward (L2)': 'eu-l2',
+      'EU Look Back (L2)': 'eu-l2',
+      'PC/EC': 'pc-ec',
+    };
+
+    const PROCESSES = Object.keys(TARGETS);
+    const BREAK = 'Break';
+    const END = 'End of Shift';
+
+    // Keyboard shortcuts: 1–9 follow the order of PROCESSES
+    const SHORTCUTS = { b: BREAK, e: END };
+    PROCESSES.forEach((p, i) => { SHORTCUTS[String(i + 1)] = p; });
+    const keyFor = p => (Object.keys(SHORTCUTS).find(k => SHORTCUTS[k] === p) || '').toUpperCase();
+
+    const GROUPS = [
+      { label: 'US · L1', items: ['US Look Forward (L1)', 'US Look Back (L1)'] },
+      { label: 'EU · L1', items: ['EU Look Forward (L1)', 'EU Look Back (L1)'] },
+      { label: 'US · L2', items: ['US Look Forward (L2)', 'US Look Back (L2)'] },
+      { label: 'EU · L2', items: ['EU Look Forward (L2)', 'EU Look Back (L2)'] },
+    ];
+
+    // Click-to-copy phrases (edit this list to add or change them)
+    const QUICK_COPY = [
+      '- Name Match Confusion',
+      '- Geo Match Confusion',
+      '- Age Match Confusion',
+      '- Duplicate Confusion',
+      '- Definite Confusion',
+      '- Uncommon Name',
+      '- Relation Confusion',
+      '- Fine Confusion',
+      'Auto Escalate',
+    ];
+
+    const STORE_KEY = 'prodTracker_v2';
+    const OLD_KEY = 'prodTracker_v1';
+    const SEEN_KEY = 'prodTracker_lastSeen';
+    const FORGOT_AFTER_MS = 10 * 3600 * 1000;  // warn if one entry runs longer than 10 h
+    const UNDO_LIMIT = 30;
+
+    // ========== State ==========
+    // production is stored per day: { 'YYYY-MM-DD': { process: { before, after, prev } } }
+    let state = { currentProcess: null, currentStart: null, logs: [], production: {} };
+    let nextId = 1;
+    let undoStack = [];
+    let prodBuiltFor = null;
+    let forgotDismissedFor = null;
+    let hourFmt = 'hms';
+
+    const $ = id => document.getElementById(id);
+
+    // ========== Helpers ==========
+    const pad = n => String(n).padStart(2, '0');
+
+    // Local calendar date (not UTC) — fixes entries landing on the wrong day
+    function dateKey(d) {
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    }
+
+    function selDate() { return $('logDate').value || dateKey(new Date()); }
+
+    function fmtTime(d) {
+      if (!d) return '—';
+      return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+    }
+
+    function fmtDuration(ms) {
+      if (ms == null || ms < 0) return '—';
+      const s = Math.floor(ms / 1000);
+      return `${Math.floor(s / 3600)}:${pad(Math.floor((s % 3600) / 60))}:${pad(s % 60)}`;
+    }
+
+    const fmtDecimal = ms => (ms / 3600000).toFixed(2);
+    const toTimeInput = d => `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    const shortName = p => p.replace('Look Forward', 'LF').replace('Look Back', 'LB').replace(/[()]/g, '');
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function withTime(base, hms) {
+      const [h, m, s] = hms.split(':').map(Number);
+      const d = new Date(base);
+      d.setHours(h, m, s || 0, 0);
+      return d;
+    }
+
+    function showToast(msg, type = 'ok') {
+      const t = $('toast');
+      t.textContent = msg;
+      t.className = 'toast show ' + type;
+      clearTimeout(t._tid);
+      t._tid = setTimeout(() => t.classList.remove('show'), 2600);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+    }
+
+    function isTyping() {
+      const el = document.activeElement;
+      return el && (el.tagName === 'INPUT' || el.tagName === 'SELECT' || el.tagName === 'TEXTAREA');
+    }
+
+    // ========== Production per day ==========
+    function prodFor(date) {
+      if (!state.production[date]) state.production[date] = {};
+      const day = state.production[date];
+      PROCESSES.forEach(p => {
+        if (!day[p]) day[p] = { before: 0, after: 0, prev: 0 };
+      });
+      return day;
+    }
+
+    // Previous day = total production (before + after) of the most recent earlier day with data.
+    // A number typed into the field overrides it; an empty field means automatic.
+    function prevAuto(date, p) {
+      const earlier = Object.keys(state.production).filter(d => d < date).sort();
+      for (let i = earlier.length - 1; i >= 0; i--) {
+        const r = state.production[earlier[i]][p];
+        const total = r ? (r.before || 0) + (r.after || 0) : 0;
+        if (total > 0) return { value: total, from: earlier[i] };
+      }
+      return { value: 0, from: null };
+    }
+
+    function prevValue(date, p) {
+      const typed = prodFor(date)[p].prev || 0;
+      return typed > 0 ? typed : prevAuto(date, p).value;
+    }
+
+    // ========== Persistence ==========
+    function serialize() {
+      return JSON.stringify({
+        v: 2,
+        currentProcess: state.currentProcess,
+        currentStart: state.currentStart ? state.currentStart.toISOString() : null,
+        logs: state.logs.map(l => ({
+          id: l.id,
+          start: l.start.toISOString(),
+          end: l.end ? l.end.toISOString() : null,
+          process: l.process,
+        })),
+        production: state.production,
+      });
+    }
+
+    function deserialize(raw) {
+      const d = JSON.parse(raw);
+      state.currentProcess = d.currentProcess || null;
+      state.currentStart = d.currentStart ? new Date(d.currentStart) : null;
+      state.logs = (d.logs || []).map(l => ({
+        id: l.id || nextId++,
+        start: new Date(l.start),
+        end: l.end ? new Date(l.end) : null,
+        process: l.process,
+      }));
+      state.logs.forEach(l => { if (l.id >= nextId) nextId = l.id + 1; });
+      state.production = d.production || {};
+    }
+
+    function save() {
+      try { localStorage.setItem(STORE_KEY, serialize()); } catch (e) { console.warn('Save failed', e); }
+    }
+
+    function load() {
+      try {
+        const raw = localStorage.getItem(STORE_KEY);
+        if (raw) { deserialize(raw); return; }
+
+        // One-time migration from the old format (v1). The old key is left in place.
+        const old = localStorage.getItem(OLD_KEY);
+        if (!old) return;
+        const d = JSON.parse(old);
+        const prod = {};
+        PROCESSES.forEach(p => {
+          const r = (d.production || {})[p];
+          if (r) prod[p] = { before: r.before || 0, after: r.after || 0, prev: r.prev || 0 };
+        });
+        deserialize(JSON.stringify({
+          currentProcess: d.currentProcess,
+          currentStart: d.currentStart,
+          logs: d.logs,
+          production: { [dateKey(new Date())]: prod },
+        }));
+        save();
+        showToast('Imported data from the previous version', 'ok');
+      } catch (e) { console.warn('Load failed', e); }
+    }
+
+    // ========== Undo ==========
+    function pushUndo(label) {
+      undoStack.push({ raw: serialize(), label });
+      if (undoStack.length > UNDO_LIMIT) undoStack.shift();
+      updateUndoBtn();
+    }
+
+    function undo() {
+      const snap = undoStack.pop();
+      if (!snap) { showToast('Nothing to undo', 'warn'); return; }
+      deserialize(snap.raw);
+      prodBuiltFor = null;
+      commit();
+      showToast('↶ Undid: ' + snap.label, 'ok');
+    }
+
+    function updateUndoBtn() {
+      const b = $('btnUndo');
+      const top = undoStack[undoStack.length - 1];
+      b.disabled = !top;
+      b.title = top ? 'Undo: ' + top.label + ' (Ctrl+Z)' : 'Nothing to undo';
+    }
+
+    // ========== Core logic ==========
+    function commit() {
+      save();
+      syncUI();
+      renderAll();
+    }
+
+    function logProcess(processName) {
+      if (processName === END && !state.currentProcess) {
+        showToast('Nothing is running', 'warn');
+        return;
+      }
+      if (processName === state.currentProcess) {
+        showToast('Already on ' + processName, 'warn');
+        return;
+      }
+
+      pushUndo(processName === END ? 'end of shift' : 'switch to ' + processName);
+      const t = new Date();
+      state.logs.forEach(l => { if (!l.end) l.end = t; });
+
+      if (processName === END) {
+        state.currentProcess = null;
+        state.currentStart = null;
+        commit();
+        showToast('Shift ended — last entry closed', 'ok');
+        return;
+      }
+
+      state.logs.push({ id: nextId++, start: t, end: null, process: processName });
+      state.currentProcess = processName;
+      state.currentStart = t;
+      // Jump the view to today if the user was looking at another day
+      if (selDate() !== dateKey(t)) { $('logDate').value = dateKey(t); prodBuiltFor = null; }
+      commit();
+      showToast('▶ ' + processName, 'ok');
+    }
+
+    function stopAt(t, label) {
+      pushUndo(label);
+      state.logs.forEach(l => { if (!l.end) l.end = t; });
+      state.currentProcess = null;
+      state.currentStart = null;
+      commit();
+    }
+
+    function syncUI() {
+      document.querySelectorAll('.proc-btn').forEach(b => {
+        const on = b.dataset.process === state.currentProcess;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+
+      const el = $('statusValue');
+      const last = state.logs[state.logs.length - 1];
+      if (state.currentProcess) {
+        el.textContent = state.currentProcess;
+        el.className = 'status-value tracking';
+        $('lastLog').textContent = 'since ' + fmtTime(state.currentStart);
+      } else if (last && last.end) {
+        el.textContent = 'Shift ended';
+        el.className = 'status-value ended';
+        $('lastLog').textContent = 'Closed at ' + fmtTime(last.end);
+      } else {
+        el.textContent = 'Ready — click a process';
+        el.className = 'status-value idle';
+        $('lastLog').textContent = 'No entries yet';
+      }
+      updateUndoBtn();
+      updateTitle();
+      checkForgotten();
+    }
+
+    function updateTitle() {
+      document.title = state.currentProcess
+        ? `▶ ${fmtDuration(Date.now() - state.currentStart)} · ${shortName(state.currentProcess)}`
+        : 'Production Hour Tracker';
+    }
+
+    // ========== Metrics ==========
+    function entryMs(l) { return (l.end || new Date()) - l.start; }
+
+    function logsForDate(date) {
+      return state.logs.filter(l => dateKey(l.start) === date);
+    }
+
+    function calcHours() {
+      let loginMs = 0, breakMs = 0;
+      logsForDate(selDate()).forEach(l => {
+        if (l.process === BREAK) breakMs += entryMs(l);
+        else loginMs += entryMs(l);
+      });
+      return { loginMs, breakMs, totalMs: loginMs + breakMs };
+    }
+
+    function hoursForProcess(process) {
+      return logsForDate(selDate())
+        .filter(l => l.process === process)
+        .reduce((ms, l) => ms + entryMs(l), 0);
+    }
+
+    // ========== Render: buttons ==========
+    function buildButtons() {
+      const btn = (p, cls, label, hint) =>
+        `<button type="button" class="proc-btn ${cls}" data-process="${esc(p)}" title="${esc(p)} — key ${keyFor(p)}" aria-pressed="false">
+          ${label}<span class="hint">${hint}</span><kbd>${keyFor(p)}</kbd>
+        </button>`;
+
+      let html = btn(BREAK, 'break', 'Break', 'Pause tracking');
+      GROUPS.forEach(g => {
+        const [fwd, back] = g.items;
+        html += `<div class="btn-group-label">${g.label}</div><div class="btn-pair">` +
+          btn(fwd, PROC_CLASS[fwd], '→ Forward', `Target ${TARGETS[fwd]} / hr`) +
+          btn(back, PROC_CLASS[back] + ' back', '← Back', `Target ${TARGETS[back]} / hr`) +
+          `</div>`;
+      });
+      html += `<div class="btn-group-label">Other</div>`;
+      html += btn('PC/EC', 'pc-ec', 'PC/EC', `Target ${TARGETS['PC/EC']} / hr`);
+      html += btn(END, 'end', 'End of Shift', 'Close last entry');
+      $('btnStack').innerHTML = html;
+    }
+
+    // ========== Render: metrics ==========
+    function renderMetrics() {
+      const { loginMs, breakMs, totalMs } = calcHours();
+      $('metricLogin').textContent = fmtDuration(loginMs);
+      $('metricBreak').textContent = fmtDuration(breakMs);
+      $('metricTotal').textContent = fmtDuration(totalMs);
+    }
+
+    // ========== Render: production table ==========
+    function buildProdTable() {
+      const date = selDate();
+      const day = prodFor(date);
+      const input = (p, field) =>
+        `<input class="prod-input" type="text" inputmode="numeric" pattern="[0-9]*" data-proc="${esc(p)}" data-field="${field}" value="${day[p][field] || ''}" maxlength="4" placeholder="0" autocomplete="off" aria-label="${esc(p)} ${field}" />`;
+
+      const tbody = $('prodBody');
+      tbody.innerHTML = PROCESSES.map(p => `<tr data-proc="${esc(p)}">
+          <td title="${esc(p)}"><span class="proc-name"><span class="dot ${PROC_CLASS[p]}"></span><span>${esc(p.replace(/ \((L\d)\)$/, ''))}${/\((L\d)\)$/.test(p) ? `<small>${p.match(/\((L\d)\)$/)[1]}</small>` : ''}</span></span></td>
+          <td class="mono prod-total">—</td>
+          <td class="mono"><span class="prod-hour copyable" tabindex="0" role="button" title="Click to copy">—</span></td>
+          <td class="mono prod-rate">—</td>
+          <td class="prod-prog"></td>
+          <td class="mono prod-balance">—</td>
+          <td>${input(p, 'prev')}</td>
+          <td>${input(p, 'before')}</td>
+          <td>${input(p, 'after')}</td>
+        </tr>`).join('');
+
+      tbody.querySelectorAll('.prod-input').forEach(inp => {
+        inp.addEventListener('input', e => {
+          const cleaned = e.target.value.replace(/[^0-9]/g, '').slice(0, 4);  // max 4 digits
+          if (e.target.value !== cleaned) {
+            const pos = e.target.selectionStart;
+            e.target.value = cleaned;
+            try { e.target.setSelectionRange(pos - 1, pos - 1); } catch (_) {}
+          }
+          prodFor(date)[e.target.dataset.proc][e.target.dataset.field] = parseInt(cleaned, 10) || 0;
+          updateProdRow(e.target.dataset.proc);
+          save();
+        });
+        inp.addEventListener('blur', e => {
+          const val = parseInt(e.target.value, 10) || 0;
+          e.target.value = val || '';
+        });
+      });
+
+      tbody.querySelectorAll('.prod-hour').forEach(cell => {
+        const copy = async () => {
+          const ms = Number(cell.dataset.ms || 0);
+          if (!ms) { showToast('No hour to copy', 'warn'); return; }
+          const text = hourFmt === 'dec' ? fmtDecimal(ms) : fmtDuration(ms);
+          await copyText(text);
+          showToast('Copied hour: ' + text, 'ok');
+        };
+        cell.addEventListener('click', copy);
+        cell.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copy(); }
+        });
+      });
+
+      $('summaryDate').textContent = date === dateKey(new Date()) ? 'today' : date;
+      prodBuiltFor = date;
+    }
+
+    function rowNumbers(p) {
+      const prod = prodFor(selDate())[p];
+      const totalProd = (prod.before || 0) + (prod.after || 0);
+      const ms = hoursForProcess(p);
+      const hours = ms / 3600000;
+      const rate = hours > 0 ? totalProd / hours : 0;
+      const target = TARGETS[p];
+      return { prod, totalProd, ms, hours, rate, target, balance: totalProd - hours * target };
+    }
+
+    function updateProdRow(p) {
+      const row = document.querySelector(`#prodBody tr[data-proc="${CSS.escape(p)}"]`);
+      if (!row) return;
+      const { prod, totalProd, ms, hours, rate, target, balance } = rowNumbers(p);
+      const used = ms > 0 || totalProd > 0 || prevValue(selDate(), p) > 0;
+
+      // Previous day: show the automatic value as a placeholder when nothing was typed
+      const prevEl = row.querySelector('input[data-field="prev"]');
+      if (prevEl && document.activeElement !== prevEl) {
+        const auto = prevAuto(selDate(), p);
+        const isAuto = !(prod.prev > 0);
+        prevEl.classList.toggle('auto', isAuto);
+        prevEl.placeholder = isAuto && auto.value ? String(auto.value) : '0';
+        prevEl.title = isAuto
+          ? (auto.from ? `Automatic: production on ${auto.from}. Type to override.` : 'No earlier day logged yet')
+          : 'Typed by you. Clear the field to use the automatic value.';
+      }
+      row.classList.toggle('inactive', !used);
+
+      row.querySelector('.prod-total').textContent = totalProd || '—';
+      const hourEl = row.querySelector('.prod-hour');
+      hourEl.textContent = ms > 0 ? fmtDuration(ms) : '—';
+      hourEl.dataset.ms = ms;
+      hourEl.title = ms > 0 ? `Click to copy (${hourFmt === 'dec' ? fmtDecimal(ms) : fmtDuration(ms)})` : 'No hours yet';
+      row.querySelector('.prod-rate').textContent = rate > 0 ? rate.toFixed(1) : '—';
+
+      const progEl = row.querySelector('.prod-prog');
+      if (hours > 0 && totalProd > 0) {
+        const pct = Math.round((rate / target) * 100);
+        const color = pct >= 100 ? 'var(--emerald)' : pct >= 80 ? 'var(--yellow)' : 'var(--rose)';
+        progEl.innerHTML = `<div class="prog" title="${rate.toFixed(1)} of ${target} / hr">
+            <div class="prog-bar"><i style="width:${Math.min(pct, 100)}%;background:${color}"></i></div>
+            <span style="color:${color}">${pct}%</span>
+          </div>`;
+      } else {
+        progEl.innerHTML = `<span class="mono" style="color:var(--muted)">—</span><span class="target-sub">target ${target}/hr</span>`;
+      }
+
+      const balEl = row.querySelector('.prod-balance');
+      balEl.textContent = (totalProd || hours) ? balance.toFixed(1) : '—';
+      balEl.style.color = balance >= 0 ? 'var(--emerald)' : 'var(--rose)';
+    }
+
+    function renderProdTable() {
+      if (prodBuiltFor !== selDate()) buildProdTable();
+      PROCESSES.forEach(updateProdRow);
+    }
+
+    // ========== Render: log ==========
+    function renderLog() {
+      const tbody = $('logBody');
+      const rows = logsForDate(selDate());
+
+      if (rows.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="empty-log"><span>📋</span>Click a process button to start logging</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = [...rows].reverse().map(l => {
+        const open = !l.end;
+        return `<tr data-id="${l.id}" style="${open ? 'background:rgba(34,197,94,.08)' : ''}" title="Click to edit">
+          <td class="mono">${fmtTime(l.start)}</td>
+          <td class="mono">${open ? '<span style="color:var(--emerald)">LIVE</span>' : fmtTime(l.end)}</td>
+          <td class="mono ${open ? 'live-dur' : ''}">${fmtDuration(entryMs(l))}</td>
+          <td><strong>${esc(l.process)}</strong></td>
+          <td><button type="button" class="row-edit" data-id="${l.id}" aria-label="Edit entry">✎</button></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function renderAll() {
+      renderMetrics();
+      renderProdTable();
+      renderLog();
+      updateTitle();
+    }
+
+    // ========== Edit dialog ==========
+    let editingId = null;
+
+    function openEdit(id) {
+      const l = state.logs.find(x => x.id === id);
+      if (!l) return;
+      editingId = id;
+      $('edProc').innerHTML = [BREAK, ...PROCESSES]
+        .map(p => `<option value="${esc(p)}" ${p === l.process ? 'selected' : ''}>${esc(p)}</option>`).join('');
+      $('edStart').value = toTimeInput(l.start);
+      $('edEnd').value = l.end ? toTimeInput(l.end) : '';
+      $('edEnd').disabled = !l.end;
+      const note = $('edNote');
+      note.className = 'dlg-note';
+      note.textContent = l.end ? '' : 'This entry is still running — only the start time can be changed.';
+      $('editDlg').showModal();
+    }
+
+    $('editForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const l = state.logs.find(x => x.id === editingId);
+      if (!l) { $('editDlg').close(); return; }
+      const note = $('edNote');
+      const fail = msg => { note.className = 'dlg-note err'; note.textContent = msg; };
+
+      // Keep the exact original time if the field was not changed
+      const newStart = $('edStart').value === toTimeInput(l.start) ? l.start : withTime(l.start, $('edStart').value);
+      let newEnd = null;
+      if (l.end) {
+        if (!$('edEnd').value) return fail('Enter an end time.');
+        newEnd = $('edEnd').value === toTimeInput(l.end) ? l.end : withTime(l.start, $('edEnd').value);
+        if (newEnd < newStart) newEnd = new Date(newEnd.getTime() + 86400000); // crosses midnight
+        if (newEnd - newStart >= 86400000) return fail('An entry cannot be 24 hours or longer.');
+      } else if (newStart > new Date()) {
+        return fail('Start time cannot be in the future.');
+      }
+
+      pushUndo('edit entry');
+      l.process = $('edProc').value;
+      l.start = newStart;
+      l.end = newEnd;
+      if (!l.end) {
+        state.currentProcess = l.process;
+        state.currentStart = l.start;
+      }
+      state.logs.sort((a, b) => a.start - b.start);
+      $('editDlg').close();
+      commit();
+      showToast('Entry updated', 'ok');
+    });
+
+    $('edDelete').addEventListener('click', () => {
+      const l = state.logs.find(x => x.id === editingId);
+      if (!l) return;
+      pushUndo('delete entry');
+      state.logs = state.logs.filter(x => x.id !== editingId);
+      if (!l.end) { state.currentProcess = null; state.currentStart = null; }
+      $('editDlg').close();
+      commit();
+      showToast('Entry deleted — Ctrl+Z to undo', 'warn');
+    });
+
+    $('edCancel').addEventListener('click', () => $('editDlg').close());
+
+    $('logBody').addEventListener('click', e => {
+      const tr = e.target.closest('tr[data-id]');
+      if (tr) openEdit(Number(tr.dataset.id));
+    });
+
+    // ========== Forgotten End of Shift ==========
+    function checkForgotten() {
+      const banner = $('forgotBanner');
+      if (!state.currentProcess || state.currentStart.getTime() === forgotDismissedFor) {
+        banner.hidden = true;
+        return;
+      }
+      const running = Date.now() - state.currentStart;
+      if (running < FORGOT_AFTER_MS) { banner.hidden = true; return; }
+
+      $('forgotMsg').innerHTML = `<strong>${esc(state.currentProcess)}</strong> has been running for <strong>${fmtDuration(running)}</strong> (since ${esc(fmtTime(state.currentStart))}, ${esc(dateKey(state.currentStart))}). Did you forget End of Shift?`;
+
+      const seen = Number(localStorage.getItem(SEEN_KEY) || 0);
+      const lastBtn = $('forgotLast');
+      if (seen > state.currentStart.getTime() && Date.now() - seen > 5 * 60000) {
+        lastBtn.hidden = false;
+        lastBtn.dataset.at = seen;
+        lastBtn.textContent = 'End at last activity (' + fmtTime(new Date(seen)) + ')';
+      } else {
+        lastBtn.hidden = true;
+      }
+      banner.hidden = false;
+    }
+
+    $('forgotLast').addEventListener('click', e => {
+      stopAt(new Date(Number(e.currentTarget.dataset.at)), 'end at last activity');
+      showToast('Shift closed at your last activity', 'ok');
+    });
+    $('forgotNow').addEventListener('click', () => { stopAt(new Date(), 'end of shift'); showToast('Shift ended', 'ok'); });
+    $('forgotKeep').addEventListener('click', () => {
+      forgotDismissedFor = state.currentStart.getTime();
+      checkForgotten();
+    });
+
+    // Remember the last time the user actually did something on the page
+    let lastSeenWrite = 0;
+    function markActive() {
+      const t = Date.now();
+      if (t - lastSeenWrite < 30000) return;
+      lastSeenWrite = t;
+      try { localStorage.setItem(SEEN_KEY, String(t)); } catch (_) {}
+    }
+    ['pointerdown', 'keydown', 'mousemove'].forEach(ev =>
+      document.addEventListener(ev, markActive, { passive: true }));
+
+    // ========== Export ==========
+    $('btnCopySummary').addEventListener('click', async () => {
+      const date = selDate();
+      const { loginMs, breakMs, totalMs } = calcHours();
+      const lines = [['Process', 'Production', 'Hours', 'Prod/hr', 'Target/hr', '% of target', 'Balance'].join('\t')];
+      PROCESSES.forEach(p => {
+        const { totalProd, ms, hours, rate, target, balance } = rowNumbers(p);
+        if (!ms && !totalProd) return;
+        lines.push([p, totalProd, fmtDecimal(ms), rate.toFixed(1), target,
+          hours > 0 ? Math.round(rate / target * 100) + '%' : '', balance.toFixed(1)].join('\t'));
+      });
+      lines.push('');
+      lines.push(['Date', date].join('\t'));
+      lines.push(['Login hours', fmtDecimal(loginMs)].join('\t'));
+      lines.push(['Break', fmtDecimal(breakMs)].join('\t'));
+      lines.push(['Total office', fmtDecimal(totalMs)].join('\t'));
+      await copyText(lines.join('\n'));
+      showToast('Summary copied — paste into Excel', 'ok');
+    });
+
+    $('btnCsv').addEventListener('click', () => {
+      const date = selDate();
+      const rows = logsForDate(date);
+      if (!rows.length) { showToast('No entries for ' + date, 'warn'); return; }
+      const q = v => `"${String(v).replace(/"/g, '""')}"`;
+      const csv = [['Date', 'Start', 'End', 'Duration (h:mm:ss)', 'Hours', 'Process'].map(q).join(',')]
+        .concat(rows.map(l => [date, fmtTime(l.start), l.end ? fmtTime(l.end) : 'LIVE',
+          fmtDuration(entryMs(l)), fmtDecimal(entryMs(l)), l.process].map(q).join(',')))
+        .join('\r\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' }));
+      a.download = `production-log-${date}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    });
+
+    // ========== Clear / reset ==========
+    $('btnClearLog').addEventListener('click', () => {
+      const date = selDate();
+      if (!logsForDate(date).length) { showToast('Log is already empty', 'warn'); return; }
+      if (!confirm(`Clear all log entries for ${date}?\n\nYou can undo this with Ctrl+Z.`)) return;
+      pushUndo('clear log ' + date);
+      const hadLive = state.logs.some(l => !l.end && dateKey(l.start) === date);
+      state.logs = state.logs.filter(l => dateKey(l.start) !== date);
+      if (hadLive) { state.currentProcess = null; state.currentStart = null; }
+      commit();
+      showToast('Log cleared — Ctrl+Z to undo', 'warn');
+    });
+
+    $('btnClearDash').addEventListener('click', () => {
+      if (!confirm('Reset everything?\n\nThis removes ALL days: every log entry and every production count, and stops tracking.\nYou can undo this with Ctrl+Z while this page stays open.')) return;
+      pushUndo('reset everything');
+      state.logs = [];
+      state.currentProcess = null;
+      state.currentStart = null;
+      state.production = {};
+      prodBuiltFor = null;
+      commit();
+      showToast('Everything reset — Ctrl+Z to undo', 'warn');
+    });
+
+    // ========== Events ==========
+    $('btnStack').addEventListener('click', e => {
+      const btn = e.target.closest('.proc-btn');
+      if (btn) logProcess(btn.dataset.process);
+    });
+
+    $('btnUndo').addEventListener('click', undo);
+
+    document.addEventListener('keydown', e => {
+      if ($('editDlg').open || isTyping()) return;
+      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === 'z') {
+        e.preventDefault();
+        undo();
+        return;
+      }
+      if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+      const p = SHORTCUTS[e.key.toLowerCase()];
+      if (p) { e.preventDefault(); logProcess(p); }
+    });
+
+    $('logDate').value = dateKey(new Date());
+    $('logDate').addEventListener('change', () => { prodBuiltFor = null; renderAll(); });
+
+    $('hideInactive').addEventListener('change', e => {
+      $('prodTable').classList.toggle('hide-inactive', e.target.checked);
+      try { localStorage.setItem('prodTracker_hideInactive', e.target.checked ? '1' : '0'); } catch (_) {}
+    });
+
+    $('hourFmt').addEventListener('click', e => {
+      const b = e.target.closest('button[data-fmt]');
+      if (!b) return;
+      hourFmt = b.dataset.fmt;
+      document.querySelectorAll('#hourFmt button').forEach(x => x.classList.toggle('active', x === b));
+      try { localStorage.setItem('prodTracker_hourFmt', hourFmt); } catch (_) {}
+      PROCESSES.forEach(updateProdRow);
+    });
+
+    // Another tab saved — pick up its data so the two tabs don't overwrite each other
+    window.addEventListener('storage', e => {
+      if (e.key !== STORE_KEY || !e.newValue) return;
+      try { deserialize(e.newValue); } catch (_) { return; }
+      if (!isTyping()) prodBuiltFor = null;
+      syncUI();
+      renderAll();
+      checkForgotten();
+    });
+
+    // ========== Clock / live tick ==========
+    function tickClock() {
+      const d = new Date();
+      const date = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' });
+      const time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+      $('clock').innerHTML = `<span class="clock-date">${date}</span>${time}`;
+    }
+
+    let lastToday = dateKey(new Date());
+    let tickCount = 0;
+
+    setInterval(() => {
+      tickClock();
+
+      // Midnight rollover: move the view to the new day if it was showing "today"
+      const today = dateKey(new Date());
+      if (today !== lastToday) {
+        if ($('logDate').value === lastToday) { $('logDate').value = today; prodBuiltFor = null; renderAll(); }
+        lastToday = today;
+      }
+
+      if (state.currentProcess) {
+        renderMetrics();
+        PROCESSES.forEach(updateProdRow);
+        const live = state.logs.find(l => !l.end);
+        const cell = document.querySelector('#logBody .live-dur');
+        if (live && cell) cell.textContent = fmtDuration(entryMs(live));
+        updateTitle();
+      }
+
+      if (++tickCount % 60 === 0) checkForgotten();
+    }, 1000);
+
+    // ========== Theme ==========
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('#themeToggle button').forEach(b => {
+        b.classList.toggle('active', b.dataset.theme === theme);
+      });
+      try { localStorage.setItem('prodTracker_theme', theme); } catch (_) {}
+    }
+
+    $('themeToggle').addEventListener('click', e => {
+      const btn = e.target.closest('button[data-theme]');
+      if (btn) applyTheme(btn.dataset.theme);
+    });
+
+    // ========== Init ==========
+    (function init() {
+      let theme = 'dark';
+      try {
+        const saved = localStorage.getItem('prodTracker_theme');
+        if (saved === 'light' || saved === 'dark') theme = saved;
+        if (localStorage.getItem('prodTracker_hourFmt') === 'dec') {
+          hourFmt = 'dec';
+          document.querySelectorAll('#hourFmt button').forEach(x => x.classList.toggle('active', x.dataset.fmt === 'dec'));
+        }
+        if (localStorage.getItem('prodTracker_hideInactive') === '1') {
+          $('hideInactive').checked = true;
+          $('prodTable').classList.add('hide-inactive');
+        }
+      } catch (_) {}
+      applyTheme(theme);
+
+      // User name (stored on this computer only)
+      const nameEl = $('userName');
+      const setAvatar = () => {
+        const n = nameEl.value.trim();
+        $('userAvatar').textContent = n ? n[0].toUpperCase() : '?';
+      };
+      try { nameEl.value = localStorage.getItem('prodTracker_userName') || ''; } catch (_) {}
+      setAvatar();
+      nameEl.addEventListener('input', () => {
+        setAvatar();
+        try { localStorage.setItem('prodTracker_userName', nameEl.value.trim()); } catch (_) {}
+      });
+      nameEl.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === 'Escape') nameEl.blur(); });
+
+      // Quick copy buttons
+      $('copyList').innerHTML = QUICK_COPY.map((t, i) =>
+        `<button type="button" class="copy-btn" data-i="${i}" title="Click to copy">${esc(t)}<span class="ci">copy</span></button>`).join('');
+      $('copyList').addEventListener('click', async e => {
+        const b = e.target.closest('.copy-btn');
+        if (!b) return;
+        const text = QUICK_COPY[Number(b.dataset.i)];
+        await copyText(text);
+        document.querySelectorAll('.copy-btn.copied').forEach(x => {
+          x.classList.remove('copied');
+          x.querySelector('.ci').textContent = 'copy';
+        });
+        b.classList.add('copied');
+        b.querySelector('.ci').textContent = '✓ copied';
+        clearTimeout(b._t);
+        b._t = setTimeout(() => { b.classList.remove('copied'); b.querySelector('.ci').textContent = 'copy'; }, 1500);
+        showToast('Copied: ' + text, 'ok');
+      });
+
+      buildButtons();
+      load();
+      syncUI();
+      renderAll();
+      checkForgotten();
+      tickClock();
+    })();
+  </script>
+</body>
+</html>
