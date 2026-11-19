@@ -984,7 +984,7 @@
         grid-template-columns: 250px minmax(0, 1fr) 235px;
         grid-template-areas: "left main right";
       }
-      .right-rail { position: sticky; top: 20px; }
+      .right-rail { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; }
     }
 
     @media (max-width: 900px) {
@@ -1036,6 +1036,9 @@
       font-weight: 600;
       transition: border-color .15s, transform .12s, color .15s;
     }
+    .right-rail .quick-btn { font-size: 0.8rem; gap: 8px; padding: 8px 10px; white-space: nowrap; }
+    .right-rail .quick-btn .qi { width: 24px; height: 24px; font-size: 0.85rem; }
+    .right-rail .quick-btn .qx { display: none; }
     .quick-btn:hover { border-color: var(--indigo); color: var(--indigo); transform: translateY(-1px); }
     .quick-btn .qi {
       width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
@@ -1198,23 +1201,6 @@
           </div>
         </div>
 
-        <div class="card" style="margin-top:20px;">
-          <div class="card-title">Quick files</div>
-          <div class="quick-links">
-            <a class="quick-btn" href="https://drive.google.com/file/d/1Re_uLJsJsKG3n9OaBMxpDylxeZMsYAvD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span class="qi">👤</span>1000 Common Names<span class="qx">↗</span>
-            </a>
-            <a class="quick-btn" href="https://drive.google.com/file/d/1q-L9NjngsTsoKWUsgvUT2h-AiHyUuB1X/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span class="qi">🗽</span>MS Unrestricted List<span class="qx">↗</span>
-            </a>
-            <a class="quick-btn" href="https://drive.google.com/file/d/1WnQk5jfwEHzcFkcfspY7eMCiOuCwAO1d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span class="qi">🏢</span>Fortune 500 List<span class="qx">↗</span>
-            </a>
-            <a class="quick-btn" href="https://drive.google.com/file/d/1LMw_bm2hXwcxgSKXAK7wcoefHsiDxDzf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span class="qi">🗺️</span>USA Map<span class="qx">↗</span>
-            </a>
-          </div>
-        </div>
       </aside>
 
       <!-- RIGHT: Dashboard -->
@@ -1317,6 +1303,23 @@
         <div class="card">
           <div class="card-title">Quick copy</div>
           <div class="copy-list" id="copyList"></div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+          <div class="card-title">Quick files</div>
+          <div class="quick-links">
+            <a class="quick-btn" href="https://drive.google.com/file/d/1Re_uLJsJsKG3n9OaBMxpDylxeZMsYAvD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">👤</span>1000 Common Names<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1q-L9NjngsTsoKWUsgvUT2h-AiHyUuB1X/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">🗽</span>MS Unrestricted List<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1WnQk5jfwEHzcFkcfspY7eMCiOuCwAO1d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">🏢</span>Fortune 500 List<span class="qx">↗</span>
+            </a>
+            <a class="quick-btn" href="https://drive.google.com/file/d/1LMw_bm2hXwcxgSKXAK7wcoefHsiDxDzf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span class="qi">🗺️</span>USA Map<span class="qx">↗</span>
+            </a>
+          </div>
         </div>
       </aside>
     </div>
