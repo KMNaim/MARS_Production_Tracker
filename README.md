@@ -1,6 +1,6 @@
 # MARS Production Tracker
 
-`MARS_Production_Tracker_NoSidebar.html` is a single HTML page that tracks how long you spend on each process and works out your production per hour against the target. Open it in Chrome or Edge. It needs no install and no internet, apart from the fonts and the Drive links.
+`MARS_Production_Tracker.html` is a single HTML page that tracks how long you spend on each process and works out your production per hour against the target. Open it in Chrome or Edge. It needs no install and no internet, apart from the fonts and the Drive links.
 
 Your data is saved in the browser on your own computer. Nobody else can see it, and clearing your browser data deletes it.
 
